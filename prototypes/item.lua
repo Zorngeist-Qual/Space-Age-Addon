@@ -51,6 +51,21 @@ data:extend(
             random_tint_color = item_tints.bluish_science
         }, 
         ------------------------ Здания ------------------------
+        ------------------------ Помпа Т2 ------------------------
+        {
+            type = "item",
+            name = "pump-mk2",
+            icon = "__base__/graphics/icons/pump.png",
+            subgroup = "energy-pipe-distribution",
+            order = "b[pipe]-d[pump-mk2]",
+            inventory_move_sound = item_sounds.fluid_inventory_move,
+            pick_sound = item_sounds.fluid_inventory_pickup,
+            drop_sound = item_sounds.fluid_inventory_move,
+            place_result = "pump-mk2",
+            stack_size = 50,
+            weight = 10 * kg,
+            random_tint_color = item_tints.yellowing_coal
+        },
         ------------------------ Продвинутая нефтеперерабатывающая установка ------------------------
         {
             type = "item",

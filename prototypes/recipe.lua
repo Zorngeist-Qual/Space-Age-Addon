@@ -53,6 +53,26 @@ data:extend(
 
         {
             type = "recipe",
+            name = "pump-mk2",
+            icon = "__base__/graphics/icons/pump.png",
+            subgroup = "energy-pipe-distribution",
+            order = "b[pipe]-d[pump-mk2]",
+            energy_required = 16,
+            enabled = false,
+            allow_quality = true,
+            ingredients = {
+                {type = "item", name = "pump", amount = 4},
+                {type = "item", name = "processing-unit", amount = 12},
+                {type = "item", name = "tungsten-plate", amount = 20},
+                {type = "fluid", name = "ammonia", amount = 100}
+            },
+            results = {
+                {type = "item", name = "pump-mk2", amount = 1}
+            }
+        },
+
+        {
+            type = "recipe",
             name = "advanced-oil-refinery",
 
             icon = "__space-age-addon__/graphics/icons/advanced-oil-refinery.png",
@@ -302,7 +322,7 @@ data:extend(
             type = "recipe",
             name = "deep-oil-processing",
             category = "advanced-oil-processing",
-            enabled = true,
+            enabled = false,
             energy_required = 5,
 
             ingredients = {
@@ -326,7 +346,7 @@ data:extend(
             type = "recipe",
             name = "intermediate-oil-processing",
             category = "advanced-oil-processing",
-            enabled = true,
+            enabled = false,
             energy_required = 5,
 
             ingredients = {
@@ -350,7 +370,7 @@ data:extend(
             type = "recipe",
             name = "primary-oil-processing",
             category = "advanced-oil-processing",
-            enabled = true,
+            enabled = false,
             energy_required = 5,
 
             ingredients = {

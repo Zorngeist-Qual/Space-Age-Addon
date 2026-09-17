@@ -261,6 +261,22 @@ data:extend(
 
             max_health = 3500,
 
+            neighbour_connectable = {
+                connections = {
+                    {location = {position = {-1.5, -2.5}, direction = defines.direction.north}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
+                    {location = {position = {1.5, -2.5}, direction = defines.direction.north}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
+                    {location = {position = {2.5, -1.5}, direction = defines.direction.east}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
+                    {location = {position = {2.5, 1.5}, direction = defines.direction.east}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
+                    {location = {position = {1.5, 2.5}, direction = defines.direction.south}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
+                    {location = {position = {-1.5, 2.5}, direction = defines.direction.south}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
+                    {location = {position = {-2.5, 1.5}, direction = defines.direction.west}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
+                    {location = {position = {-2.5, -1.5}, direction = defines.direction.west}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}}
+                }
+            },
+
+            two_direction_only = true,
+            neighbour_bonus = 1,
+
             collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
             selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
 
@@ -364,7 +380,7 @@ data:extend(
 
             output_fluid_box = {
                 production_type = "output",
-                volume = 1200,
+                volume = 2400,
                 filter = "steam",
 
                 pipe_covers = pipecoverspictures(),
@@ -372,14 +388,14 @@ data:extend(
 
                 pipe_connections = {
                     {
-                        flow_direction = "output",
+                        flow_direction = "input-output",
                         direction = defines.direction.west,
                         position = {-2, 0}
                     },
 
 
                     {
-                        flow_direction = "output",
+                        flow_direction = "input-output",
                         direction = defines.direction.east,
                         position = {2, 0}
                     }
@@ -593,3 +609,15 @@ data:extend(
         }
     }
 )
+
+local pump_mk2 = table.deepcopy(data.raw["pump"]["pump"])
+pump_mk2.name = "pump-mk2"
+pump_mk2.minable.result = "pump-mk2"
+pump_mk2.max_health = 360
+pump_mk2.pumping_speed = 80
+
+for _, animation in pairs(pump_mk2.animations) do
+    animation.tint = {r = 1, g = 0.75, b = 0.1, a = 1}
+end
+
+data:extend({pump_mk2})

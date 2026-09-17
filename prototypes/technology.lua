@@ -1,18 +1,56 @@
 data:extend(
     { 
         ------------------------- Технологии ------------------------
+        {
+            type = "technology",
+            name = "pump-mk2",
+            icon = "__base__/graphics/technology/fluid-handling.png",
+            icon_size = 256,
+            prerequisites = {"fluid-handling", "chemical-science-pack"},
+            effects = {
+                {
+                    type = "unlock-recipe",
+                    recipe = "pump-mk2"
+                }
+            },
+            unit = {
+                ingredients = {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"production-science-pack", 1},
+                    {"utility-science-pack", 1},
+                    {"space-science-pack", 1},
+                    {"cryogenic-science-pack", 1}
+                },
+                time = 30,
+                count = 10000
+            }
+        },
         -- Основные исследования 
         {
             type = "technology",
             name = "advanced-oil-refinery",
             icon = "__space-age-addon__/graphics/technology/oil-processing.png",
-            icon_size = 64,
+            icon_size = 256,
             localised_name = {"technology-name.advanced-oil-refinery"},
             prerequisites = {"advanced-oil-processing", "production-science-pack"},
             effects = {
                 {
                     type = "unlock-recipe",
                     recipe = "advanced-oil-refinery"
+                },
+                {
+                    type = "unlock-recipe",
+                    recipe = "deep-oil-processing"
+                },
+                {
+                    type = "unlock-recipe",
+                    recipe = "intermediate-oil-processing"
+                },
+                {
+                    type = "unlock-recipe",
+                    recipe = "primary-oil-processing"
                 }
             },
             unit = {
@@ -103,7 +141,8 @@ data:extend(
                     {"chemical-science-pack", 1}, 
                     {"production-science-pack", 1}, 
                     {"utility-science-pack", 1}, 
-                    {"space-science-pack", 1}
+                    {"space-science-pack", 1},
+                    {"cryogenic-science-pack", 1}
                 },
                 count = 5000,
                 time = 10
@@ -144,7 +183,7 @@ data:extend(
             icon_size = 64,
             localised_name = {"technology-name.magmothermic-energy"},
             localised_description = {"technology-description.magmothermic-energy"},
-            prerequisites = {"metallurgic-science-pack", "uranium-processing"},
+            prerequisites = {"planet-discovery-vulcanus", "metallurgic-science-pack", "uranium-processing"},
             effects = {
                 {
                     type = "unlock-recipe",
