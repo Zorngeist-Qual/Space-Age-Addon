@@ -54,6 +54,7 @@ data:extend(
         {
             type = "recipe",
             name = "pump-mk2",
+            category = "crafting-with-fluid",
             icon = "__base__/graphics/icons/pump.png",
             subgroup = "energy-pipe-distribution",
             order = "b[pipe]-d[pump-mk2]",
