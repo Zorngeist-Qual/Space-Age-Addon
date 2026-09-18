@@ -261,22 +261,6 @@ data:extend(
 
             max_health = 3500,
 
-            neighbour_connectable = {
-                connections = {
-                    {location = {position = {-1.5, -2.5}, direction = defines.direction.north}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
-                    {location = {position = {1.5, -2.5}, direction = defines.direction.north}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
-                    {location = {position = {2.5, -1.5}, direction = defines.direction.east}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
-                    {location = {position = {2.5, 1.5}, direction = defines.direction.east}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
-                    {location = {position = {1.5, 2.5}, direction = defines.direction.south}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
-                    {location = {position = {-1.5, 2.5}, direction = defines.direction.south}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
-                    {location = {position = {-2.5, 1.5}, direction = defines.direction.west}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}},
-                    {location = {position = {-2.5, -1.5}, direction = defines.direction.west}, category = "magmothermic-reactor", neighbour_category = {"magmothermic-reactor"}}
-                }
-            },
-
-            two_direction_only = true,
-            neighbour_bonus = 1,
-
             collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
             selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
 
@@ -418,8 +402,8 @@ data:extend(
             max_health = 3000,
             corpse = "steam-turbine-remnants",
             alert_icon_shift = util.by_pixel(0, -12),
-            effectivity = 1,
-            fluid_usage_per_tick = 10,
+            effectivity = 2,
+            fluid_usage_per_tick = 5,
             maximum_temperature = 750,
             burns_fluid = false,
             resistances =
@@ -467,7 +451,7 @@ data:extend(
 
             fluid_box =
             {
-                volume = 1200,
+                volume = 2400,
                 pipe_covers = pipecoverspictures(),
                 pipe_connections =
                 {
